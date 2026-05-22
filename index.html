@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="2nd year physics syllabus tracker with resources, notes links, PYQ links, revision planner, and progress tracking." />
+  <title>2nd Year Physics Tracker</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">2Y</div>
+        <div>
+          <h1>2nd Year Physics Tracker</h1>
+          <p>Responsive syllabus dashboard for study, PYQs, notes, and revision.</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="ghost-btn" id="themeToggle" aria-label="Toggle theme">🌓</button>
+        <button class="ghost-btn" id="exportBtn">Export</button>
+        <button class="danger-btn" id="resetBtn">Reset</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="panel sticky-panel">
+          <h2>Dashboard</h2>
+          <div class="stat-grid">
+            <div class="stat-card"><span id="doneTopics">0</span><small>Done</small></div>
+            <div class="stat-card"><span id="totalTopics">0</span><small>Total</small></div>
+            <div class="stat-card"><span id="percentDone">0%</span><small>Progress</small></div>
+            <div class="stat-card"><span id="savedLinksCount">0</span><small>Links</small></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-labels"><span>Overall progress</span><span id="progressText">0%</span></div>
+            <div class="progress-bar"><div id="progressFill"></div></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Quick actions</h2>
+          <div class="stack">
+            <button class="action-btn" data-jump="search">Search topics</button>
+            <button class="action-btn" data-jump="resources">Open resources</button>
+            <button class="action-btn" data-jump="planner">Study planner</button>
+          </div>
+        </section>
+
+        <section class="panel" id="planner">
+          <h2>Study planner</h2>
+          <div class="planner-grid">
+            <label>
+              Target exam date
+              <input type="date" id="examDate">
+            </label>
+            <label>
+              Weekly hours
+              <input type="number" id="weeklyHours" min="1" max="80" value="12">
+            </label>
+            <label>
+              Daily target
+              <input type="number" id="dailyTarget" min="1" max="20" value="3">
+            </label>
+          </div>
+          <button class="primary-btn" id="savePlanner">Save planner</button>
+          <p class="hint" id="plannerHint">Auto-saved in your browser.</p>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="panel hero">
+          <div>
+            <h2>Complete syllabus tracker</h2>
+            <p>Track every topic, attach Google Drive PYQs and notes, keep resources, and use it on mobile or GitHub Pages.</p>
+          </div>
+          <div class="hero-pill">Offline-friendly • Fast • Responsive</div>
+        </section>
+
+        <section class="panel" id="search">
+          <div class="section-head">
+            <h2>Find anything</h2>
+            <input type="search" id="searchInput" placeholder="Search course, topic, resource, note, or link">
+          </div>
+        </section>
+
+        <section class="filters panel">
+          <div class="filter-row" id="filterRow"></div>
+        </section>
+
+        <section id="courses" class="courses"></section>
+      </section>
+    </main>
+  </div>
+
+  <template id="courseTemplate">
+    <article class="course-card">
+      <div class="course-head">
+        <div>
+          <p class="course-code"></p>
+          <h3 class="course-title"></h3>
+          <p class="course-subtitle"></p>
+        </div>
+        <div class="course-meta">
+          <span class="badge topics-badge"></span>
+          <span class="badge status-badge"></span>
+        </div>
+      </div>
+
+      <div class="resource-block" id="resources">
+        <div class="block-head">
+          <h4>Resources</h4>
+          <button class="mini-btn toggle-resources-btn">Hide</button>
+        </div>
+        <div class="resource-links"></div>
+      </div>
+
+      <div class="links-grid">
+        <div class="link-card">
+          <label>PYQ Google Drive link</label>
+          <input type="url" class="pyq-link" placeholder="https://drive.google.com/file/d/DEMO_PYQ_LINK/view">
+        </div>
+        <div class="link-card">
+          <label>Notes Google Drive link</label>
+          <input type="url" class="notes-link" placeholder="https://drive.google.com/file/d/DEMO_NOTES_LINK/view">
+        </div>
+      </div>
+      <div class="course-actions">
+        <button class="primary-btn save-links-btn">Save links</button>
+        <button class="ghost-btn clear-links-btn">Clear links</button>
+      </div>
+      <div class="saved-links"></div>
+
+      <div class="topic-toolbar">
+        <div class="block-head">
+          <h4>Topics</h4>
+          <span class="topic-count"></span>
+        </div>
+        <div class="toolbar-actions">
+          <button class="mini-btn mark-all-btn">Mark all</button>
+          <button class="mini-btn clear-all-btn">Clear all</button>
+        </div>
+      </div>
+      <ul class="topic-list"></ul>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
