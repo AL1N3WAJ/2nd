@@ -10,7 +10,7 @@
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -38,7 +38,6 @@
             <div class="stat-card"><span id="doneTopics">0</span><small>Done</small></div>
             <div class="stat-card"><span id="totalTopics">0</span><small>Total</small></div>
             <div class="stat-card"><span id="percentDone">0%</span><small>Progress</small></div>
-            <div class="stat-card"><span id="savedLinksCount">0</span><small>Links</small></div>
           </div>
           <div class="progress-wrap">
             <div class="progress-labels"><span>Overall progress</span><span id="progressText">0%</span></div>
@@ -50,7 +49,7 @@
           <h2>Quick actions</h2>
           <div class="stack">
             <button class="action-btn" data-jump="search">Search topics</button>
-            <button class="action-btn" data-jump="resources">Open resources</button>
+            <button class="action-btn" data-jump="courses">Course List</button>
             <button class="action-btn" data-jump="planner">Study planner</button>
           </div>
         </section>
@@ -80,7 +79,7 @@
         <section class="panel hero">
           <div>
             <h2>Complete syllabus tracker</h2>
-            <p>Track every topic, attach Google Drive PYQs and notes, keep resources, and use it on mobile or GitHub Pages.</p>
+            <p>Track every topic, instantly view target cloud-hosted Google Drive folders, run metrics, and structure target exam preparation timelines seamlessly.</p>
           </div>
           <div class="hero-pill">Offline-friendly • Fast • Responsive</div>
         </section>
@@ -88,7 +87,7 @@
         <section class="panel" id="search">
           <div class="section-head">
             <h2>Find anything</h2>
-            <input type="search" id="searchInput" placeholder="Search course, topic, resource, note, or link">
+            <input type="search" id="searchInput" placeholder="Search course, topic, reference label...">
           </div>
         </section>
 
@@ -115,38 +114,35 @@
         </div>
       </div>
 
-      <div class="resource-block" id="resources">
+      <div class="course-action-vault" style="margin-top: 18px;">
+         <a href="#" target="_blank" rel="noopener noreferrer" class="primary-btn drive-folder-link" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37,99,235,0.2);">
+           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+           Open Shared Notes & PYQs
+         </a>
+      </div>
+
+      <div class="resource-block" style="margin-top:20px;">
         <div class="block-head">
-          <h4>Resources</h4>
-          <button class="mini-btn toggle-resources-btn">Hide</button>
+          <h4 style="display:inline-flex; align-items:center; gap:6px; margin:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            External Lectures & Guides
+          </h4>
+          <button class="mini-btn toggle-resources-btn">Hide Panel</button>
         </div>
         <div class="resource-links"></div>
       </div>
 
-      <div class="links-grid">
-        <div class="link-card">
-          <label>PYQ Google Drive link</label>
-          <input type="url" class="pyq-link" placeholder="https://drive.google.com/file/d/DEMO_PYQ_LINK/view">
-        </div>
-        <div class="link-card">
-          <label>Notes Google Drive link</label>
-          <input type="url" class="notes-link" placeholder="https://drive.google.com/file/d/DEMO_NOTES_LINK/view">
-        </div>
-      </div>
-      <div class="course-actions">
-        <button class="primary-btn save-links-btn">Save links</button>
-        <button class="ghost-btn clear-links-btn">Clear links</button>
-      </div>
-      <div class="saved-links"></div>
-
-      <div class="topic-toolbar">
-        <div class="block-head">
-          <h4>Topics</h4>
-          <span class="topic-count"></span>
+      <div class="topic-toolbar" style="border-top: 1px dashed var(--border); padding-top: 15px;">
+        <div class="block-head" style="margin:0;">
+          <h4 style="display:inline-flex; align-items:center; gap:6px; margin:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent2);"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            Topic Tracking Matrix
+          </h4>
+          <span class="topic-count" style="margin-left:8px;"></span>
         </div>
         <div class="toolbar-actions">
-          <button class="mini-btn mark-all-btn">Mark all</button>
-          <button class="mini-btn clear-all-btn">Clear all</button>
+          <button class="mini-btn mark-all-btn">Mark All</button>
+          <button class="mini-btn clear-all-btn">Clear All</button>
         </div>
       </div>
       <ul class="topic-list"></ul>
