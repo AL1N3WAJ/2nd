@@ -3,10 +3,11 @@ const courses = [
     code: "PHYS 201",
     title: "Mathematical Physics and Classical Mechanics-II",
     subtitle: "Tensor analysis, complex variables, PDEs, variational principles, Hamiltonian mechanics, rigid bodies, canonical transformations, Hamilton-Jacobi method, and small oscillations.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
     resources: [
-      { label: "MIT 8.01SC", url: "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/" },
-      { label: "MIT 18.03SC", url: "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" },
-      { label: "Khan Complex", url: "https://www.khanacademy.org/math/algebra-home/alg-complex-numbers" }
+      { label: "MIT 8.01SC Mechanics", url: "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/" },
+      { label: "MIT 18.03SC PDEs", url: "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" },
+      { label: "Khan Complex Numbers", url: "https://www.khanacademy.org/math/algebra-home/alg-complex-numbers" }
     ],
     topics: [
       "Tensor analysis",
@@ -26,8 +27,9 @@ const courses = [
     code: "PHYS 202",
     title: "Electricity and Magnetism",
     subtitle: "Electrostatics, capacitors, current electricity, DC/AC circuits, magnetic fields, induction, and magnetic properties of matter.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
     resources: [
-      { label: "MIT 8.02", url: "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2007/" },
+      { label: "MIT 8.02 Course", url: "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2007/" },
       { label: "MIT 8.02 YouTube", url: "https://www.youtube.com/playlist?list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j" }
     ],
     topics: [
@@ -46,9 +48,10 @@ const courses = [
     code: "PHYS 203",
     title: "Statistical Mechanics and Radiation",
     subtitle: "Ensembles, statistics, partition function, quantum distributions, black-body radiation, and solar radiation.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
     resources: [
-      { label: "MIT 8.044", url: "https://ocw.mit.edu/courses/8-044-statistical-physics-i-spring-2013/" },
-      { label: "Khan DE", url: "https://www.khanacademy.org/math/differential-equations" }
+      { label: "MIT 8.044 Statistical Physics", url: "https://ocw.mit.edu/courses/8-044-statistical-physics-i-spring-2013/" },
+      { label: "Khan Differential Equations", url: "https://www.khanacademy.org/math/differential-equations" }
     ],
     topics: [
       "Phase space",
@@ -68,9 +71,10 @@ const courses = [
     code: "PHYS 204",
     title: "Computer Fundamentals and Programming",
     subtitle: "Digital systems, microprocessor architecture, networking, HTML, C++, and programming paradigms.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
     resources: [
-      { label: "MIT C/C++", url: "https://ocw.mit.edu/courses/6-s096-introduction-to-c-and-c-january-iap-2013/" },
-      { label: "MIT Programming", url: "https://ocw.mit.edu/courses/6-s096-effective-programming-in-c-and-c-january-iap-2014/" }
+      { label: "MIT C/C++ Intro", url: "https://ocw.mit.edu/courses/6-s096-introduction-to-c-and-c-january-iap-2013/" },
+      { label: "MIT Effective Programming", url: "https://ocw.mit.edu/courses/6-s096-effective-programming-in-c-and-c-january-iap-2014/" }
     ],
     topics: [
       "Binary arithmetic",
@@ -92,9 +96,10 @@ const courses = [
     code: "PHYS 205",
     title: "Differential Equations and Applications",
     subtitle: "First-order ODEs, second-order ODEs, series solution, Frobenius method, orthogonal polynomials, and Bessel functions.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
     resources: [
-      { label: "MIT 18.03SC", url: "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" },
-      { label: "Khan DE", url: "https://www.khanacademy.org/math/differential-equations" }
+      { label: "MIT 18.03SC DEs", url: "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" },
+      { label: "Khan DEs", url: "https://www.khanacademy.org/math/differential-equations" }
     ],
     topics: [
       "First order equations",
@@ -114,9 +119,10 @@ const courses = [
     code: "PHYS 206",
     title: "Mathematics-II",
     subtitle: "Differential calculus, integral calculus, and beta-gamma functions.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
     resources: [
-      { label: "MIT 18.01SC", url: "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" },
-      { label: "MIT 18.02SC", url: "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" }
+      { label: "MIT 18.01SC Single Variable", url: "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" },
+      { label: "MIT 18.02SC Multivariable", url: "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" }
     ],
     topics: [
       "Limits and continuity",
@@ -135,9 +141,10 @@ const courses = [
     code: "PHYS 207",
     title: "Chemistry-II (Organic)",
     subtitle: "Hybridization, hydrocarbons, aldehydes, ketones, amines, alcohols, and major organic reactions.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
     resources: [
       { label: "MIT OCW Chemistry", url: "https://ocw.mit.edu/" },
-      { label: "Organic Chem", url: "https://www.youtube.com/results?search_query=organic+chemistry+lecture+playlist" }
+      { label: "Organic Chemistry Playlist", url: "https://www.youtube.com/results?search_query=organic+chemistry+lecture+playlist" }
     ],
     topics: [
       "Hybridization",
@@ -159,13 +166,11 @@ const courses = [
   }
 ];
 
-const storageKey = 'syllabus-progress-v3';
-const linksKey = 'syllabus-links-v3';
-const plannerKey = 'syllabus-planner-v3';
-const themeKey = 'syllabus-theme-v3';
+const storageKey = 'syllabus-progress-v4';
+const plannerKey = 'syllabus-planner-v4';
+const themeKey = 'syllabus-theme-v4';
 
 let progress = JSON.parse(localStorage.getItem(storageKey)) || {};
-let savedLinks = JSON.parse(localStorage.getItem(linksKey)) || {};
 let planner = JSON.parse(localStorage.getItem(plannerKey)) || { examDate: '', weeklyHours: 12, dailyTarget: 3 };
 let activeFilter = 'all';
 let searchTerm = '';
@@ -179,7 +184,6 @@ const progressFill = document.getElementById('progressFill');
 const doneTopicsEl = document.getElementById('doneTopics');
 const totalTopicsEl = document.getElementById('totalTopics');
 const percentDoneEl = document.getElementById('percentDone');
-const savedLinksCountEl = document.getElementById('savedLinksCount');
 const examDateEl = document.getElementById('examDate');
 const weeklyHoursEl = document.getElementById('weeklyHours');
 const dailyTargetEl = document.getElementById('dailyTarget');
@@ -187,7 +191,6 @@ const plannerHint = document.getElementById('plannerHint');
 
 function saveAll() {
   localStorage.setItem(storageKey, JSON.stringify(progress));
-  localStorage.setItem(linksKey, JSON.stringify(savedLinks));
   localStorage.setItem(plannerKey, JSON.stringify(planner));
 }
 
@@ -197,10 +200,6 @@ function totalTopics() {
 
 function doneTopics() {
   return Object.values(progress).filter(Boolean).length;
-}
-
-function savedLinksCount() {
-  return Object.values(savedLinks).filter(v => (v?.pyq || v?.notes)).length;
 }
 
 function pct() {
@@ -219,7 +218,7 @@ function renderFilters() {
   all.forEach(code => {
     const b = document.createElement('button');
     b.className = 'filter-btn' + (code === activeFilter ? ' active' : '');
-    b.textContent = code === 'all' ? 'All' : code;
+    b.textContent = code === 'all' ? 'All Modules' : code;
     b.addEventListener('click', () => {
       activeFilter = code;
       render();
@@ -235,9 +234,7 @@ function matchesSearch(course) {
     course.title,
     course.subtitle,
     ...course.topics,
-    ...(course.resources.map(r => r.label + ' ' + r.url)),
-    (savedLinks[course.code]?.pyq || ''),
-    (savedLinks[course.code]?.notes || '')
+    ...(course.resources.map(r => r.label))
   ].join(' ').toLowerCase();
   return hay.includes(searchTerm);
 }
@@ -249,25 +246,43 @@ function updateDashboard() {
   percentDoneEl.textContent = `${p}%`;
   progressText.textContent = `${p}% completed`;
   progressFill.style.width = `${p}%`;
-  savedLinksCountEl.textContent = savedLinksCount();
 }
 
 function render() {
   renderFilters();
   coursesEl.innerHTML = '';
+  let matchCount = 0;
+
   courses
     .filter(c => (activeFilter === 'all' || c.code === activeFilter) && matchesSearch(c))
-    .forEach(course => {
+    .forEach((course) => {
       const clone = template.content.cloneNode(true);
       const key = course.code;
+
+      const cardContainer = clone.querySelector('.course-card');
+      if (cardContainer) {
+        cardContainer.style.animationDelay = `${matchCount * 0.06}s`;
+      }
+      matchCount++;
 
       clone.querySelector('.course-code').textContent = course.code;
       clone.querySelector('.course-title').textContent = course.title;
       clone.querySelector('.course-subtitle').textContent = course.subtitle;
-      clone.querySelector('.topics-badge').textContent = `${course.topics.length} topics`;
+      clone.querySelector('.topics-badge').textContent = `${course.topics.length} Units`;
 
       const done = course.topics.filter(t => progress[`${course.code}::${t}`]).length;
-      clone.querySelector('.status-badge').textContent = `${done}/${course.topics.length} done`;
+      const statusBadge = clone.querySelector('.status-badge');
+      statusBadge.textContent = `${done}/${course.topics.length} Clear`;
+      
+      if (done === course.topics.length && course.topics.length > 0) {
+        statusBadge.classList.add('complete-badge');
+        statusBadge.textContent = '🏆 100% Completed';
+      }
+
+      const driveLink = clone.querySelector('.drive-folder-link');
+      if(course.driveFolder) {
+        driveLink.href = course.driveFolder;
+      }
 
       const resources = clone.querySelector('.resource-links');
       course.resources.forEach(r => {
@@ -279,39 +294,11 @@ function render() {
         resources.appendChild(a);
       });
 
-      const pyq = clone.querySelector('.pyq-link');
-      const notes = clone.querySelector('.notes-link');
-      pyq.value = savedLinks[key]?.pyq || '';
-      notes.value = savedLinks[key]?.notes || '';
-
-      const savedBox = clone.querySelector('.saved-links');
-      const renderSaved = () => {
-        const pyqLink = savedLinks[key]?.pyq || '';
-        const notesLink = savedLinks[key]?.notes || '';
-        savedBox.innerHTML =
-          `<div><strong>PYQ:</strong> ${pyqLink ? `<a href="${pyqLink}" target="_blank" rel="noopener noreferrer">Open Google Drive</a>` : 'Not added'}</div>` +
-          `<div><strong>Notes:</strong> ${notesLink ? `<a href="${notesLink}" target="_blank" rel="noopener noreferrer">Open Google Drive</a>` : 'Not added'}</div>`;
-      };
-
-      clone.querySelector('.save-links-btn').addEventListener('click', () => {
-        savedLinks[key] = { pyq: pyq.value.trim(), notes: notes.value.trim() };
-        saveAll();
-        render();
-        updateDashboard();
-      });
-
-      clone.querySelector('.clear-links-btn').addEventListener('click', () => {
-        delete savedLinks[key];
-        saveAll();
-        render();
-        updateDashboard();
-      });
-
       clone.querySelector('.toggle-resources-btn').addEventListener('click', (e) => {
         const block = e.target.closest('.course-card').querySelector('.resource-links').parentElement;
         const hidden = block.style.display === 'none';
         block.style.display = hidden ? '' : 'none';
-        e.target.textContent = hidden ? 'Hide' : 'Show';
+        e.target.textContent = hidden ? 'Hide Panel' : 'Show Panel';
       });
 
       const topicList = clone.querySelector('.topic-list');
@@ -335,7 +322,7 @@ function render() {
         topicList.appendChild(li);
       });
 
-      clone.querySelector('.topic-count').textContent = `${course.topics.length} topics`;
+      clone.querySelector('.topic-count').textContent = `${course.topics.length} Chapters total`;
       clone.querySelector('.mark-all-btn').addEventListener('click', () => {
         course.topics.forEach(topic => progress[`${course.code}::${topic}`] = true);
         saveAll();
@@ -349,7 +336,6 @@ function render() {
         render();
       });
 
-      renderSaved();
       coursesEl.appendChild(clone);
     });
   updateDashboard();
@@ -361,12 +347,10 @@ searchInput.addEventListener('input', e => {
 });
 
 document.getElementById('resetBtn').addEventListener('click', () => {
-  if (confirm('Reset all progress, links, and planner?')) {
+  if (confirm('Are you sure you want to clear your local study tracker milestones?')) {
     localStorage.removeItem(storageKey);
-    localStorage.removeItem(linksKey);
     localStorage.removeItem(plannerKey);
     progress = {};
-    savedLinks = {};
     planner = { examDate: '', weeklyHours: 12, dailyTarget: 3 };
     examDateEl.value = '';
     weeklyHoursEl.value = 12;
@@ -377,11 +361,11 @@ document.getElementById('resetBtn').addEventListener('click', () => {
 });
 
 document.getElementById('exportBtn').addEventListener('click', () => {
-  const data = { progress, savedLinks, planner, exportedAt: new Date().toISOString() };
+  const data = { progress, planner, exportedAt: new Date().toISOString() };
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'syllabus-backup.json';
+  a.download = 'physics-tracker-backup.json';
   a.click();
   URL.revokeObjectURL(a.href);
 });
@@ -393,7 +377,8 @@ document.getElementById('savePlanner').addEventListener('click', () => {
     dailyTarget: Number(dailyTargetEl.value || 0)
   };
   saveAll();
-  plannerHint.textContent = 'Planner saved.';
+  plannerHint.textContent = 'Planner parameters locked in locally!';
+  setTimeout(() => { plannerHint.textContent = 'Auto-saved in your browser.'; }, 3000);
 });
 
 document.querySelectorAll('[data-jump]').forEach(btn =>
