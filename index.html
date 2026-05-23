@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="2nd year physics syllabus tracker with resources, notes links, PYQ links, revision planner, and progress tracking." />
-  <title>2nd Year Physics Tracker</title>
+  <meta name="theme-color" content="#070a13" />
+  <meta name="description" content="Chittagong University Physics Honours 2nd Year Syllabus Tracker." />
+  <title>Physics 2Y Quantum Tracker</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,15 +17,15 @@
   <div class="app-shell">
     <header class="topbar">
       <div class="brand">
-        <div class="logo">2Y</div>
+        <div class="logo">Ψ</div>
         <div>
-          <h1>2nd Year Physics Tracker</h1>
-          <p>Responsive syllabus dashboard for study, PYQs, notes, and revision.</p>
+          <h1>Physics 2nd Year Master Tracker</h1>
+          <p>University of Chittagong Course Syllabus Metrics Workspace.</p>
         </div>
       </div>
       <div class="topbar-actions">
         <button class="ghost-btn" id="themeToggle" aria-label="Toggle theme">🌓</button>
-        <button class="ghost-btn" id="exportBtn">Export</button>
+        <button class="ghost-btn" id="exportBtn">Export Data</button>
         <button class="danger-btn" id="resetBtn">Reset</button>
       </div>
     </header>
@@ -33,61 +33,61 @@
     <main class="layout">
       <aside class="sidebar">
         <section class="panel sticky-panel">
-          <h2>Dashboard</h2>
+          <h2>Tracker Dashboard</h2>
           <div class="stat-grid">
             <div class="stat-card"><span id="doneTopics">0</span><small>Done</small></div>
-            <div class="stat-card"><span id="totalTopics">0</span><small>Total</small></div>
-            <div class="stat-card"><span id="percentDone">0%</span><small>Progress</small></div>
+            <div class="stat-card"><span id="totalTopics">0</span><small>Total Chapters</small></div>
+            <div class="stat-card"><span id="percentDone">0%</span><small>Overall</small></div>
           </div>
           <div class="progress-wrap">
-            <div class="progress-labels"><span>Overall progress</span><span id="progressText">0%</span></div>
+            <div class="progress-labels"><span>Course Mastery</span><span id="progressText">0%</span></div>
             <div class="progress-bar"><div id="progressFill"></div></div>
           </div>
         </section>
 
         <section class="panel">
-          <h2>Quick actions</h2>
+          <h2>Navigation Anchors</h2>
           <div class="stack">
-            <button class="action-btn" data-jump="search">Search topics</button>
-            <button class="action-btn" data-jump="courses">Course List</button>
-            <button class="action-btn" data-jump="planner">Study planner</button>
+            <button class="action-btn" data-jump="search">Search Filters</button>
+            <button class="action-btn" data-jump="courses">Course Syllabus List</button>
+            <button class="action-btn" data-jump="planner">Strategic Exam Planner</button>
           </div>
         </section>
 
         <section class="panel" id="planner">
-          <h2>Study planner</h2>
+          <h2>Strategic Exam Planner</h2>
           <div class="planner-grid">
             <label>
-              Target exam date
+              Target Exam Session Date
               <input type="date" id="examDate">
             </label>
             <label>
-              Weekly hours
+              Weekly Study Allocation (Hours)
               <input type="number" id="weeklyHours" min="1" max="80" value="12">
             </label>
             <label>
-              Daily target
+              Daily Derivations Target
               <input type="number" id="dailyTarget" min="1" max="20" value="3">
             </label>
           </div>
-          <button class="primary-btn" id="savePlanner">Save planner</button>
-          <p class="hint" id="plannerHint">Auto-saved in your browser.</p>
+          <button class="primary-btn" id="savePlanner" style="margin-top: 12px; width: 100%;">Commit Parameters</button>
+          <p class="hint" id="plannerHint">Auto-saved in browser cache storage.</p>
         </section>
       </aside>
 
       <section class="content">
         <section class="panel hero">
           <div>
-            <h2>Complete syllabus tracker</h2>
-            <p>Track every topic, instantly view target cloud-hosted Google Drive folders, run metrics, and structure target exam preparation timelines seamlessly.</p>
+            <h2>Theoretical Course Mapping</h2>
+            <p>Targeting 100/100 marks through rigorous proof tracking, international open courseware links, and organized sub-unit workflows. Focus on derivation accuracy and boundary analysis.</p>
           </div>
-          <div class="hero-pill">Offline-friendly • Fast • Responsive</div>
+          <div class="hero-pill">University Syllabus Aligned</div>
         </section>
 
         <section class="panel" id="search">
           <div class="section-head">
-            <h2>Find anything</h2>
-            <input type="search" id="searchInput" placeholder="Search course, topic, reference label...">
+            <h2>Dynamic Syllabus Indexer</h2>
+            <input type="search" id="searchInput" placeholder="Filter through specific derivations, courses, equations or text parameters...">
           </div>
         </section>
 
@@ -115,34 +115,34 @@
       </div>
 
       <div class="course-action-vault" style="margin-top: 18px;">
-         <a href="#" target="_blank" rel="noopener noreferrer" class="primary-btn drive-folder-link" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37,99,235,0.2);">
+         <a href="#" target="_blank" rel="noopener noreferrer" class="primary-btn drive-folder-link" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-           Open Shared Notes & PYQs
+           Access Shared Notes & PYQs
          </a>
       </div>
 
-      <div class="resource-block" style="margin-top:20px;">
+      <div class="resource-block">
         <div class="block-head">
-          <h4 style="display:inline-flex; align-items:center; gap:6px; margin:0;">
+          <h4 style="display:inline-flex; align-items:center; gap:6px; margin:0; font-weight: 700;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-            External Lectures & Guides
+            Global Open Courseware & Reference Libraries
           </h4>
-          <button class="mini-btn toggle-resources-btn">Hide Panel</button>
+          <button class="mini-btn toggle-resources-btn">Collapse Reference Panels</button>
         </div>
         <div class="resource-links"></div>
       </div>
 
-      <div class="topic-toolbar" style="border-top: 1px dashed var(--border); padding-top: 15px;">
+      <div class="topic-toolbar" style="border-top: 1px dashed var(--border); padding-top: 16px;">
         <div class="block-head" style="margin:0;">
-          <h4 style="display:inline-flex; align-items:center; gap:6px; margin:0;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent2);"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-            Topic Tracking Matrix
+          <h4 style="display:inline-flex; align-items:center; gap:6px; margin:0; font-weight: 700;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--success);"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            Curriculum Checklist Matrix
           </h4>
           <span class="topic-count" style="margin-left:8px;"></span>
         </div>
         <div class="toolbar-actions">
-          <button class="mini-btn mark-all-btn">Mark All</button>
-          <button class="mini-btn clear-all-btn">Clear All</button>
+          <button class="mini-btn mark-all-btn">Mark All Checked</button>
+          <button class="mini-btn clear-all-btn">Flush Checklist</button>
         </div>
       </div>
       <ul class="topic-list"></ul>
