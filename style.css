@@ -1,447 +1,401 @@
-:root{
-  --bg:#0b1020;
-  --bg2:#111827;
-  --card:#10192b;
-  --border:#26334a;
-  --text:#e8eef9;
-  --muted:#a0aec0;
-  --accent:#60a5fa;
-  --accent2:#14b8a6;
-  --danger:#f87171;
-  --success:#10b981;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-[data-theme="light"]{
-  --bg:#f5f7fb;
-  --bg2:#ffffff;
-  --card:#ffffff;
-  --border:#dbe4f0;
-  --text:#102033;
-  --muted:#5d6e82;
-  --accent:#0ea5e9;
-  --accent2:#16a34a;
-  --danger:#dc2626;
-  --success:#15803d;
-  --shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:linear-gradient(180deg,var(--bg),var(--bg2));
-  color:var(--text);
-  min-height: 100vh;
-}
-a{color:inherit}
-.app-shell{max-width:1500px;margin:0 auto;padding:16px}
+const courses = [
+  {
+    code: "PHYS 201",
+    title: "Mathematical Physics and Classical Mechanics-II",
+    subtitle: "Tensor analysis, complex variables, PDEs, variational principles, Hamiltonian mechanics, rigid bodies, canonical transformations, Hamilton-Jacobi method, and small oscillations.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
+    resources: [
+      { label: "MIT 8.01SC Mechanics", url: "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/" },
+      { label: "MIT 18.03SC PDEs", url: "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" },
+      { label: "Khan Complex Numbers", url: "https://www.khanacademy.org/math/algebra-home/alg-complex-numbers" }
+    ],
+    topics: [
+      "Tensor analysis",
+      "Complex variables",
+      "Partial differential equations",
+      "Variational principle",
+      "Lagrangian formulation",
+      "Hamiltonian equations",
+      "Two-body central force",
+      "Rigid bodies",
+      "Canonical transformation",
+      "Hamilton-Jacobi method",
+      "Small oscillation"
+    ]
+  },
+  {
+    code: "PHYS 202",
+    title: "Electricity and Magnetism",
+    subtitle: "Electrostatics, capacitors, current electricity, DC/AC circuits, magnetic fields, induction, and magnetic properties of matter.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
+    resources: [
+      { label: "MIT 8.02 Course", url: "https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2007/" },
+      { label: "MIT 8.02 YouTube", url: "https://www.youtube.com/playlist?list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j" }
+    ],
+    topics: [
+      "Electrostatics",
+      "Capacitors and dielectrics",
+      "Current electricity",
+      "DC circuits",
+      "AC circuits",
+      "Magnetic field",
+      "Magnetic forces",
+      "Electromagnetic induction",
+      "Magnetic properties of matter"
+    ]
+  },
+  {
+    code: "PHYS 203",
+    title: "Statistical Mechanics and Radiation",
+    subtitle: "Ensembles, statistics, partition function, quantum distributions, black-body radiation, and solar radiation.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
+    resources: [
+      { label: "MIT 8.044 Statistical Physics", url: "https://ocw.mit.edu/courses/8-044-statistical-physics-i-spring-2013/" },
+      { label: "Khan Differential Equations", url: "https://www.khanacademy.org/math/differential-equations" }
+    ],
+    topics: [
+      "Phase space",
+      "Liouville's theorem",
+      "Microcanonical ensemble",
+      "Canonical ensemble",
+      "Grand canonical ensemble",
+      "Maxwell-Boltzmann statistics",
+      "Bose-Einstein statistics",
+      "Fermi-Dirac statistics",
+      "Black-body radiation",
+      "Solar radiation",
+      "Radiation pyrometers"
+    ]
+  },
+  {
+    code: "PHYS 204",
+    title: "Computer Fundamentals and Programming",
+    subtitle: "Digital systems, microprocessor architecture, networking, HTML, C++, and programming paradigms.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
+    resources: [
+      { label: "MIT C/C++ Intro", url: "https://ocw.mit.edu/courses/6-s096-introduction-to-c-and-c-january-iap-2013/" },
+      { label: "MIT Effective Programming", url: "https://ocw.mit.edu/courses/6-s096-effective-programming-in-c-and-c-january-iap-2014/" }
+    ],
+    topics: [
+      "Binary arithmetic",
+      "Data representation",
+      "Logic gates",
+      "Boolean algebra",
+      "Half adder and full adder",
+      "CPU and memory",
+      "8085/8086 architecture",
+      "Networking and WWW",
+      "HTML introduction",
+      "C++ basics",
+      "Pointers and classes",
+      "Files",
+      "Programming paradigms"
+    ]
+  },
+  {
+    code: "PHYS 205",
+    title: "Differential Equations and Applications",
+    subtitle: "First-order ODEs, second-order ODEs, series solution, Frobenius method, orthogonal polynomials, and Bessel functions.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
+    resources: [
+      { label: "MIT 18.03SC DEs", url: "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" },
+      { label: "Khan DEs", url: "https://www.khanacademy.org/math/differential-equations" }
+    ],
+    topics: [
+      "First order equations",
+      "Second order equations",
+      "Undetermined coefficients",
+      "Variation of parameters",
+      "Series solution",
+      "Frobenius method",
+      "Legendre polynomials",
+      "Hermite polynomials",
+      "Laguerre polynomials",
+      "Chebyshev polynomial",
+      "Bessel equation"
+    ]
+  },
+  {
+    code: "PHYS 206",
+    title: "Mathematics-II",
+    subtitle: "Differential calculus, integral calculus, and beta-gamma functions.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
+    resources: [
+      { label: "MIT 18.01SC Single Variable", url: "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" },
+      { label: "MIT 18.02SC Multivariable", url: "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" }
+    ],
+    topics: [
+      "Limits and continuity",
+      "Differentiation",
+      "Taylor theorem",
+      "Maxima and minima",
+      "Indefinite integrals",
+      "Definite integrals",
+      "Arc length",
+      "Area and volume",
+      "Beta function",
+      "Gamma function"
+    ]
+  },
+  {
+    code: "PHYS 207",
+    title: "Chemistry-II (Organic)",
+    subtitle: "Hybridization, hydrocarbons, aldehydes, ketones, amines, alcohols, and major organic reactions.",
+    driveFolder: "https://drive.google.com/drive/u/0/folders/1-1pu6sfr6tjWJbaVy3DmmNcUB33XyTxT",
+    resources: [
+      { label: "MIT OCW Chemistry", url: "https://ocw.mit.edu/" },
+      { label: "Organic Chemistry Playlist", url: "https://www.youtube.com/results?search_query=organic+chemistry+lecture+playlist" }
+    ],
+    topics: [
+      "Hybridization",
+      "Empirical formula",
+      "Molecular formula",
+      "Paraffins",
+      "Olefins",
+      "Acetylene",
+      "Aldehydes and ketones",
+      "Amines",
+      "Alcohols",
+      "Wurtz-Fittig reaction",
+      "Friedel-Crafts reaction",
+      "Perkin's reaction",
+      "Aldol condensation",
+      "Benzoin condensation",
+      "Hofmann degradation"
+    ]
+  }
+];
 
-.topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:16px 18px;
-  border:1px solid var(--border);
-  border-radius:22px;
-  background: rgba(16, 25, 43, 0.75);
-  backdrop-filter:blur(12px);
-  box-shadow:var(--shadow);
-  position:sticky;
-  top:12px;
-  z-index:40;
-  animation: slideDown 0.4s ease-out;
-}
-[data-theme="light"] .topbar {
-  background: rgba(255, 255, 255, 0.85);
-}
+const storageKey = 'syllabus-progress-v4';
+const plannerKey = 'syllabus-planner-v4';
+const themeKey = 'syllabus-theme-v4';
 
-.brand{display:flex;gap:14px;align-items:center;min-width:0}
-.logo{
-  width:52px;
-  height:52px;
-  border-radius:16px;
-  display:grid;
-  place-items:center;
-  font-weight:800;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;
-  flex:0 0 auto;
-  transition: var(--transition);
-}
-.brand:hover .logo {
-  transform: rotate(8deg) scale(1.05);
-}
-.brand h1{margin:0;font-size:clamp(1.1rem,2vw,1.8rem)}
-.brand p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
-.topbar-actions,.course-actions,.toolbar-actions,.stack,.filter-row{display:flex;gap:10px;flex-wrap:wrap}
+let progress = JSON.parse(localStorage.getItem(storageKey)) || {};
+let planner = JSON.parse(localStorage.getItem(plannerKey)) || { examDate: '', weeklyHours: 12, dailyTarget: 3 };
+let activeFilter = 'all';
+let searchTerm = '';
 
-.ghost-btn,.danger-btn,.primary-btn,.action-btn,.mini-btn{
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  padding:11px 14px;
-  border-radius:14px;
-  font-weight:600;
-  cursor:pointer;
-  transition: var(--transition);
-  touch-action:manipulation;
-  position: relative;
-}
-.primary-btn{background:linear-gradient(135deg,var(--accent),#2563eb);border-color:transparent;color:white}
-.danger-btn{background:linear-gradient(135deg,var(--danger),#b91c1c);border-color:transparent;color:white}
+const coursesEl = document.getElementById('courses');
+const template = document.getElementById('courseTemplate');
+const filterRow = document.getElementById('filterRow');
+const searchInput = document.getElementById('searchInput');
+const progressText = document.getElementById('progressText');
+const progressFill = document.getElementById('progressFill');
+const doneTopicsEl = document.getElementById('doneTopics');
+const totalTopicsEl = document.getElementById('totalTopics');
+const percentDoneEl = document.getElementById('percentDone');
+const examDateEl = document.getElementById('examDate');
+const weeklyHoursEl = document.getElementById('weeklyHours');
+const dailyTargetEl = document.getElementById('dailyTarget');
+const plannerHint = document.getElementById('plannerHint');
 
-.ghost-btn:hover, .action-btn:hover, .mini-btn:hover{
-  background: var(--border);
-  transform: translateY(-2px);
-}
-.primary-btn:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.35);
-}
-.danger-btn:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(248, 113, 113, 0.35);
-}
-
-.layout{display:grid;grid-template-columns:360px minmax(0,1fr);gap:18px;margin-top:18px}
-.sidebar{display:flex;flex-direction:column;gap:18px}
-.content{min-width:0;display:flex;flex-direction:column;gap:18px}
-
-.panel,.course-card{
-  background:rgba(255,255,255,.03);
-  border:1px solid var(--border);
-  border-radius:22px;
-  box-shadow:var(--shadow);
-  transition: var(--transition);
-}
-.panel{padding:18px}
-.panel:hover {
-  border-color: rgba(96, 165, 250, 0.25);
-}
-.sticky-panel{position:sticky;top:104px}
-
-.stat-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:12px;
-  margin-top:12px
-}
-.stat-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:16px;
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  align-items:flex-start;
-  transition: var(--transition);
-}
-.stat-card:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--accent);
-}
-.stat-card span{font-size:1.6rem;font-weight:800;line-height:1}
-.stat-card small{color:var(--muted)}
-
-.progress-wrap{margin-top:14px}
-.progress-labels{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  color:var(--muted);
-  font-size:.95rem;
-  margin-bottom:8px
-}
-.progress-bar{
-  height:12px;
-  border-radius:999px;
-  background:#1d293d;
-  overflow:hidden;
-  position: relative;
-}
-.progress-bar div{
-  height:100%;
-  width:0%;
-  border-radius:inherit;
-  background:linear-gradient(90deg,var(--accent2),var(--accent));
-  transition: width 0.6s cubic-bezier(0.1, 1, 0.1, 1);
-  position: relative;
-}
-.progress-bar div::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-  animation: progressShimmer 2.5s infinite linear;
-}
-
-.hero{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-  background: linear-gradient(135deg, rgba(16, 25, 43, 0.8), rgba(30, 41, 59, 0.4));
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  width: 200px; height: 200px;
-  background: var(--accent);
-  filter: blur(140px);
-  top: -60px; right: -60px;
-  opacity: 0.15;
-  pointer-events: none;
-}
-.hero h2{margin:0 0 8px;font-size:clamp(1.2rem,2.2vw,2rem)}
-.hero p{margin:0;color:var(--muted);max-width:72ch;line-height:1.6}
-.hero-pill{
-  padding:10px 14px;
-  border-radius:999px;
-  background:rgba(56,189,248,.12);
-  border:1px solid rgba(56,189,248,.2);
-  color:var(--accent);
-  font-weight:700;
-  white-space:nowrap;
-  animation: pulseGlow 2.5s infinite ease-in-out;
+function saveAll() {
+  localStorage.setItem(storageKey, JSON.stringify(progress));
+  localStorage.setItem(plannerKey, JSON.stringify(planner));
 }
 
-.section-head{display:flex;flex-direction:column;gap:10px}
-.section-head h2,.panel h2,.course-title,.course-head h3{margin:0}
-.section-head input{
-  width:100%;
-  padding:14px 16px;
-  border-radius:16px;
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  font-size:1rem;
-  transition: var(--transition);
-}
-.section-head input:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+function totalTopics() {
+  return courses.reduce((s, c) => s + c.topics.length, 0);
 }
 
-.filter-row{margin-top:2px}
-.filter-row .filter-btn{
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  padding:10px 16px;
-  border-radius:999px;
-  font-weight:600;
-  cursor:pointer;
-  transition: var(--transition);
-}
-.filter-row .filter-btn:hover {
-  transform: translateY(-1px);
-  border-color: var(--accent);
-}
-.filter-row .filter-btn.active{
-  background:linear-gradient(135deg,var(--accent),#2563eb);
-  color:#fff;
-  border-color:transparent;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+function doneTopics() {
+  return Object.values(progress).filter(Boolean).length;
 }
 
-.courses{display:grid;grid-template-columns:1fr;gap:18px}
-.course-card{
-  padding:24px;
-  animation: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.course-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(96, 165, 250, 0.3);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-}
-.course-head{
-  display:flex;
-  justify-content:space-between;
-  gap:14px;
-  align-items:flex-start
-}
-.course-code{
-  margin:0 0 6px;
-  color:var(--accent);
-  font-weight:800;
-  letter-spacing:.04em
-}
-.course-subtitle{
-  margin:8px 0 0;
-  color:var(--muted);
-  line-height:1.55;
-  font-size:0.95rem;
-}
-.course-meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:7px 12px;
-  border-radius:999px;
-  background:#122036;
-  border:1px solid var(--border);
-  font-size:.82rem;
-  font-weight:700;
-  color:var(--text);
-  transition: var(--transition);
-}
-.status-badge.complete-badge {
-  background: rgba(16, 185, 129, 0.15);
-  border-color: var(--success);
-  color: var(--success);
-  animation: dynamicPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+function pct() {
+  const t = totalTopics();
+  return t ? Math.round((doneTopics() / t) * 100) : 0;
 }
 
-.resource-block{
-  margin-top:16px;
-  background: rgba(0,0,0,0.12);
-  padding: 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.01);
-}
-.block-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin-bottom:10px
-}
-.block-head h4,.topic-toolbar h4{margin:0;font-size:1rem}
-.resource-links{display:flex;flex-wrap:wrap;gap:10px}
-.resource-links a{
-  padding:10px 12px;
-  border-radius:14px;
-  background:#0f172a;
-  border:1px solid var(--border);
-  text-decoration:none;
-  font-weight:600;
-  color:var(--accent);
-  font-size:0.88rem;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-[data-theme="light"] .resource-links a { background: #f0f4f8; }
-.resource-links a:hover{
-  background: var(--accent);
-  color: #fff;
-  transform: translateY(-1px);
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem(themeKey, theme);
 }
 
-.topic-toolbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin-top:18px
-}
-.topic-count{color:var(--muted); font-size:0.9rem;}
-
-.topic-list{
-  list-style:none;
-  margin:12px 0 0;
-  padding:0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 6px 16px;
-}
-.topic-list li{
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
-  padding:8px 10px;
-  border-radius: 10px;
-  border-bottom:1px solid rgba(38, 51, 74, 0.3);
-  transition: var(--transition);
-}
-.topic-list li:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-.topic-list input{
-  margin-top:4px;
-  transform:scale(1.2);
-  cursor: pointer;
-  accent-color: var(--accent2);
-}
-.topic-list span{line-height:1.4; font-size:0.92rem; transition: var(--transition);}
-.topic-list input:checked + span {
-  color: var(--muted);
-  text-decoration: line-through;
-  opacity: 0.65;
+function renderFilters() {
+  const all = ['all', ...courses.map(c => c.code)];
+  filterRow.innerHTML = '';
+  all.forEach(code => {
+    const b = document.createElement('button');
+    b.className = 'filter-btn' + (code === activeFilter ? ' active' : '');
+    b.textContent = code === 'all' ? 'All Modules' : code;
+    b.addEventListener('click', () => {
+      activeFilter = code;
+      render();
+    });
+    filterRow.appendChild(b);
+  });
 }
 
-.planner-grid{display:grid;grid-template-columns:1fr;gap:12px}
-.planner-grid label{display:flex;flex-direction:column;gap:8px;color:var(--muted);font-weight:600}
-.planner-grid input{
-  width:100%;
-  padding:13px 14px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  transition: var(--transition);
-}
-.planner-grid input:focus{ outline: none; border-color: var(--accent); }
-.hint{color:var(--muted);font-size:.92rem;margin:10px 0 0}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes progressShimmer {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(100%); }
-}
-@keyframes pulseGlow {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.015); }
-}
-@keyframes dynamicPop {
-  0% { transform: scale(0.85); }
-  70% { transform: scale(1.08); }
-  100% { transform: scale(1); }
+function matchesSearch(course) {
+  if (!searchTerm) return true;
+  const hay = [
+    course.code,
+    course.title,
+    course.subtitle,
+    ...course.topics,
+    ...(course.resources.map(r => r.label))
+  ].join(' ').toLowerCase();
+  return hay.includes(searchTerm);
 }
 
-@media (max-width: 1200px){
-  .layout{grid-template-columns:1fr}
-  .sticky-panel{position:static}
-  .sidebar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
-  .panel.hero{grid-column:1/-1}
+function updateDashboard() {
+  const p = pct();
+  doneTopicsEl.textContent = doneTopics();
+  totalTopicsEl.textContent = totalTopics();
+  percentDoneEl.textContent = `${p}%`;
+  progressText.textContent = `${p}% completed`;
+  progressFill.style.width = `${p}%`;
 }
-@media (max-width: 800px){
-  .topbar{position:static;flex-direction:column;align-items:stretch}
-  .brand{align-items:flex-start}
-  .topbar-actions{justify-content:stretch}
-  .topbar-actions>*{flex:1}
-  .sidebar{grid-template-columns:1fr}
-  .hero{flex-direction:column;align-items:flex-start}
-  .topic-toolbar,.course-head,.block-head{flex-direction:column;align-items:flex-start}
-  .course-meta{justify-content:flex-start}
-  .app-shell{padding:12px}
-  .panel,.course-card,.topbar{border-radius:18px}
-  .filter-row{gap:8px}
-  .filter-row .filter-btn{padding:10px 12px}
-  .topic-list {grid-template-columns: 1fr;}
+
+function render() {
+  renderFilters();
+  coursesEl.innerHTML = '';
+  let matchCount = 0;
+
+  courses
+    .filter(c => (activeFilter === 'all' || c.code === activeFilter) && matchesSearch(c))
+    .forEach((course) => {
+      const clone = template.content.cloneNode(true);
+      const key = course.code;
+
+      const cardContainer = clone.querySelector('.course-card');
+      if (cardContainer) {
+        cardContainer.style.animationDelay = `${matchCount * 0.06}s`;
+      }
+      matchCount++;
+
+      clone.querySelector('.course-code').textContent = course.code;
+      clone.querySelector('.course-title').textContent = course.title;
+      clone.querySelector('.course-subtitle').textContent = course.subtitle;
+      clone.querySelector('.topics-badge').textContent = `${course.topics.length} Units`;
+
+      const done = course.topics.filter(t => progress[`${course.code}::${t}`]).length;
+      const statusBadge = clone.querySelector('.status-badge');
+      statusBadge.textContent = `${done}/${course.topics.length} Clear`;
+      
+      if (done === course.topics.length && course.topics.length > 0) {
+        statusBadge.classList.add('complete-badge');
+        statusBadge.textContent = '🏆 100% Completed';
+      }
+
+      const driveLink = clone.querySelector('.drive-folder-link');
+      if(course.driveFolder) {
+        driveLink.href = course.driveFolder;
+      }
+
+      const resources = clone.querySelector('.resource-links');
+      course.resources.forEach(r => {
+        const a = document.createElement('a');
+        a.href = r.url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = r.label;
+        resources.appendChild(a);
+      });
+
+      clone.querySelector('.toggle-resources-btn').addEventListener('click', (e) => {
+        const block = e.target.closest('.course-card').querySelector('.resource-links').parentElement;
+        const hidden = block.style.display === 'none';
+        block.style.display = hidden ? '' : 'none';
+        e.target.textContent = hidden ? 'Hide Panel' : 'Show Panel';
+      });
+
+      const topicList = clone.querySelector('.topic-list');
+      course.topics.forEach(topic => {
+        const li = document.createElement('li');
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = !!progress[`${course.code}::${topic}`];
+        cb.addEventListener('change', e => {
+          const t = `${course.code}::${topic}`;
+          if (e.target.checked) progress[t] = true;
+          else delete progress[t];
+          saveAll();
+          updateDashboard();
+          render();
+        });
+        const span = document.createElement('span');
+        span.textContent = topic;
+        li.appendChild(cb);
+        li.appendChild(span);
+        topicList.appendChild(li);
+      });
+
+      clone.querySelector('.topic-count').textContent = `${course.topics.length} Chapters total`;
+      clone.querySelector('.mark-all-btn').addEventListener('click', () => {
+        course.topics.forEach(topic => progress[`${course.code}::${topic}`] = true);
+        saveAll();
+        updateDashboard();
+        render();
+      });
+      clone.querySelector('.clear-all-btn').addEventListener('click', () => {
+        course.topics.forEach(topic => delete progress[`${course.code}::${topic}`]);
+        saveAll();
+        updateDashboard();
+        render();
+      });
+
+      coursesEl.appendChild(clone);
+    });
+  updateDashboard();
 }
-@media (max-width: 480px){
-  body{background:var(--bg)}
-  .app-shell{padding:10px}
-  .logo{width:46px;height:46px;border-radius:14px}
-  .brand h1{font-size:1.05rem}
-  .brand p{font-size:.88rem}
-  .ghost-btn,.danger-btn,.primary-btn,.action-btn,.mini-btn,.filter-row .filter-btn{padding:12px 12px;font-size:.95rem}
-  .section-head input,.planner-grid input{padding:14px}
-}
+
+searchInput.addEventListener('input', e => {
+  searchTerm = e.target.value.trim().toLowerCase();
+  render();
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  if (confirm('Are you sure you want to clear your local study tracker milestones?')) {
+    localStorage.removeItem(storageKey);
+    localStorage.removeItem(plannerKey);
+    progress = {};
+    planner = { examDate: '', weeklyHours: 12, dailyTarget: 3 };
+    examDateEl.value = '';
+    weeklyHoursEl.value = 12;
+    dailyTargetEl.value = 3;
+    render();
+    updateDashboard();
+  }
+});
+
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const data = { progress, planner, exportedAt: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'physics-tracker-backup.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+document.getElementById('savePlanner').addEventListener('click', () => {
+  planner = {
+    examDate: examDateEl.value,
+    weeklyHours: Number(weeklyHoursEl.value || 0),
+    dailyTarget: Number(dailyTargetEl.value || 0)
+  };
+  saveAll();
+  plannerHint.textContent = 'Planner parameters locked in locally!';
+  setTimeout(() => { plannerHint.textContent = 'Auto-saved in your browser.'; }, 3000);
+});
+
+document.querySelectorAll('[data-jump]').forEach(btn =>
+  btn.addEventListener('click', () =>
+    document.getElementById(btn.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' })
+  )
+);
+
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  setTheme(next);
+});
+
+const savedTheme = localStorage.getItem(themeKey) || 'dark';
+setTheme(savedTheme);
+examDateEl.value = planner.examDate || '';
+weeklyHoursEl.value = planner.weeklyHours || 12;
+dailyTargetEl.value = planner.dailyTarget || 3;
+render();
+updateDashboard();
